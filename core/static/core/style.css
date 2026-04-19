@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background: #0f172a;
     color: white;
-    margin: 20;
+    margin: 20px;
     padding: 0;
 }
 
@@ -133,3 +133,8 @@ button:hover {
 .meta-card:hover {
     background: #374151;
 }
+
+.meta-group { display: none; }
+ { display: block; }
+
+.meta-card { color: white; }

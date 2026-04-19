@@ -24,114 +24,150 @@
     </div>
 
     <!-- ОБОБЩЕНИЯ -->
-    <div id="gen" class="meta-group">
+  <div id="gen" class="meta-group">
 
-    <div class="meta-card" onclick="insertQuestion('Кто именно? Кому конкретно?')">
-        <b>Обобщённый референтный индекс</b><br>
-        Кто именно? Кому конкретно?
-    </div>
-
-    <div class="meta-card" onclick="insertQuestion('Всегда? Были ли исключения?')">
-        <b>Универсальные кванторы</b><br>
-        Всегда? Были ли исключения?
-    </div>
-
-    <div class="meta-card" onclick="insertQuestion('Что случится если ты этого не сделаешь?')">
-        <b>Должен / обязан</b><br>
-        Что случится если не сделать?
-    </div>
-
-    <div class="meta-card" onclick="insertQuestion('При каких условиях это возможно?')">
-        <b>Не могу / невозможно</b><br>
-        При каких условиях это возможно?
-    </div>
-
-    <div class="meta-card" onclick="insertQuestion('Как именно это происходит?')">
-        <b>Номинализация</b><br>
-        Как именно это происходит?
-    </div>
-
+<div class="meta-card" onclick="insertQuestion('Кто именно? Кому конкретно?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Обобщённый референтный индекс</b><br>
+Кто именно? Кому конкретно?
+<div class="hint">Пример: "Люди злые"</div>
 </div>
 
-        </div>
+<div class="meta-card" onclick="insertQuestion('Всегда? Были ли исключения?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Универсальные кванторы</b><br>
+Всегда? Были ли исключения?
+<div class="hint">Пример: "Я всегда опаздываю"</div>
+</div>
+
+<div class="meta-card" onclick="insertQuestion('Что случится если ты этого не сделаешь?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Модальный оператор необходимости</b><br>
+Что случится если не сделать?
+<div class="hint">Пример: "Я должен это сделать"</div>
+</div>
+
+<div class="meta-card" onclick="insertQuestion('При каких условиях это возможно?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Модальный оператор возможности</b><br>
+При каких условиях это возможно?
+<div class="hint">Пример: "Я не могу больше зарабатывать"</div>
+</div>
+
+<div class="meta-card" onclick="insertQuestion('Как именно это происходит?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Номинализация</b><br>
+Как именно это происходит?
+<div class="hint">Пример: "У меня депрессия"</div>
+</div>
+
+</div>
 
 
     <!-- ОПУЩЕНИЯ -->
-   <div id="del" class="meta-group" style="display:none;">
+    <div id="del" class="meta-group" style="display:none;">
 
-    <div class="meta-card" onclick="insertQuestion('Кто именно это делает?')">
-        <b>Стёртый референтный индекс</b><br>
-        Кто именно это делает?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Кто именно это делает?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Стёртый референтный индекс</b><br>
+Кто именно это делает?
+<div class="hint">Пример: "Деньги не зарабатываются"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('Что конкретно ты будешь делать?')">
-        <b>Неконкретные глаголы</b><br>
-        Что конкретно ты делаешь?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Что конкретно ты делаешь?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Неконкретные глаголы</b><br>
+Что конкретно ты делаешь?
+<div class="hint">Пример: "Я работаю"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('По каким критериям?')">
-        <b>Неконкретные прилагательные</b><br>
-        По каким критериям ты это определяешь?
-    </div>
+<div class="meta-card" onclick="insertQuestion('По каким критериям?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Неконкретные прилагательные</b><br>
+По каким критериям?
+<div class="hint">Пример: "Он грубый"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('Какой именно?')">
-        <b>Неконкретные существительные</b><br>
-        Какой именно?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Какой именно?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Неконкретные существительные</b><br>
+Какой именно?
+<div class="hint">Пример: "Телефон сломался"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('По сравнению с чем?')">
-        <b>Сравнения</b><br>
-        По сравнению с чем?
-    </div>
+<div class="meta-card" onclick="insertQuestion('По сравнению с чем?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Сравнения</b><br>
+По сравнению с чем?
+<div class="hint">Пример: "Мне стало хуже"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('Что именно? Где? Когда?')">
-        <b>Неопределённый референт</b><br>
-        Что именно? Где? Когда?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Что именно? Где? Когда?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Неопределённости</b><br>
+Что именно? Где? Когда?
+<div class="hint">Пример: "Это поможет"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('Кто конкретно это сказал?')">
-        <b>Суждения</b><br>
-        Кто конкретно? Для кого это правда?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Кто конкретно? Для кого?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Суждения</b><br>
+Кто конкретно? Для кого?
+<div class="hint">Пример: "Все знают"</div>
+</div>
 
 </div>
+
     <!-- ИСКАЖЕНИЯ -->
     <div id="dist" class="meta-group" style="display:none;">
 
-    <div class="meta-card" onclick="insertQuestion('Как именно ты это делаешь?')">
-        <b>Обратный референтный индекс</b><br>
-        Как именно ты это делаешь?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Как именно ты это делаешь?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Обратный референтный индекс</b><br>
+Как именно ты это делаешь?
+<div class="hint">Пример: "Он меня не любит"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('Всегда ли одно означает другое?')">
-        <b>Комплексный эквивалент</b><br>
-        Всегда ли одно означает другое?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Всегда ли одно означает другое?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Комплексный эквивалент</b><br>
+Всегда ли одно означает другое?
+<div class="hint">Пример: "Не смотрит в глаза = врёт"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('Что ты сейчас предполагаешь?')">
-        <b>Пресуппозиции</b><br>
-        Что ты сейчас предполагаешь?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Что ты предполагаешь?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Пресуппозиции</b><br>
+Что ты предполагаешь?
+<div class="hint">Пример: "Ты уже понял?"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('С чего ты это взял?')">
-        <b>Чтение мыслей</b><br>
-        С чего ты знаешь, что это так?
-    </div>
+<div class="meta-card" onclick="insertQuestion('С чего ты это взял?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Чтение мыслей</b><br>
+С чего ты это взял?
+<div class="hint">Пример: "Я знаю, что ты думаешь"</div>
+</div>
 
-    <div class="meta-card" onclick="insertQuestion('Как именно это вызывает это?')">
-        <b>Причина-следствие</b><br>
-        Как именно это вызывает это?
-    </div>
+<div class="meta-card" onclick="insertQuestion('Как именно это вызывает это?')" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+<b>Причина-следствие</b><br>
+Как именно это вызывает это?
+<div class="hint">Пример: "Осень вызывает депрессию"</div>
+</div>
 
 </div>
 
-
 <script>
-function showMeta(group) {
-    document.getElementById("gen").style.display = "none";
-    document.getElementById("del").style.display = "none";
-    document.getElementById("dist").style.display = "none";
+function showHint(el){
+    let hint = el.querySelector(".hint");
+    if(hint) hint.style.display = "block";
+}
 
-    document.getElementById(group).style.display = "block";
+function hideHint(el){
+    let hint = el.querySelector(".hint");
+    if(hint) hint.style.display = "none";
+}
+</script>
+
+    <script>
+function insertQuestion(text) {
+    const textarea = document.querySelector("textarea[name='answer']");
+    if (!textarea) return;
+
+    textarea.value += (textarea.value ? "\n" : "") + text;
+    textarea.focus();
+}
+</script>
+
+    <script>
+function showMeta(id) {
+    document.querySelectorAll('.meta-group').forEach(el => {
+        el.style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
 }
 </script>
