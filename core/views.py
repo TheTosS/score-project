@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Session, Answer
+from collections import defaultdict
 
 QUESTIONS_S = [
     "Что происходит сейчас?",
@@ -207,9 +208,25 @@ def step_e(request):
         step = 0
 
     if step >= len(QUESTIONS_E):
-        return render(request, "core/done_all.html")
+        return render(request, "core/done_all.html", {
+            "session_id": session.id
+        })
 
     return render(request, "core/step_e.html", {
         "question": QUESTIONS_E[step],
         "step": step
+    })
+
+def report(request, session_id):
+    session = Session.objects.get(id=session_id)
+    answers = Answer.objects.filter(session=session).order_by("step", "order")
+
+    data = defaultdict(list)
+
+    for ans in answers:
+        data[ans.step].append(ans)
+
+    return render(request, "core/report.html", {
+        "data": data,
+        "session": session
     })

@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/style.css' %}">
+
+<div class="container">
+    <h1>Сессия SCORE #{{ session.id }}</h1>
+
+    <h2>S — Симптомы</h2>
+    {% for a in data.S %}
+        <p><b>{{ a.question }}</b><br>{{ a.answer }}</p>
+    {% endfor %}
+
+    <h2>C — Причины</h2>
+    {% for a in data.C %}
+        <p>{{ a.answer }}</p>
+    {% endfor %}
+
+    <h2>O — Цель</h2>
+    {% for a in data.O %}
+        <p><b>{{ a.question }}</b><br>{{ a.answer }}</p>
+    {% endfor %}
+
+    <h2>R — Ресурсы</h2>
+    {% for a in data.R %}
+        <p><b>{{ a.question }}</b><br>{{ a.answer }}</p>
+    {% endfor %}
+
+    <h2>E — Эффекты</h2>
+    {% for a in data.E %}
+        <p><b>{{ a.question }}</b><br>{{ a.answer }}</p>
+    {% endfor %}
+</div>

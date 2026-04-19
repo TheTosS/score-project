@@ -1,12 +1,12 @@
-<h2>Сессия завершена</h2>
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/style.css' %}">
 
-<p>Ты прошёл всю модель SCORE.</p>
-<p>Теперь у тебя есть:</p>
+<div class="container">
+    <h1>Сессия завершена 🎉</h1>
 
-<ul>
-    <li>Понимание ситуации</li>
-    <li>Глубинные причины</li>
-    <li>Чёткий результат</li>
-    <li>Ресурсы</li>
-    <li>Проверка экологичности</li>
-</ul>
+    <p>Ты прошёл всю модель SCORE.</p>
+
+    <a href="/report/{{ session_id }}/">
+        <button>Смотреть отчет</button>
+    </a>
+</div>
