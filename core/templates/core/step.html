@@ -11,3 +11,99 @@
         <button type="submit">Далее</button>
     </form>
 </div>
+
+<div class="meta-root">
+
+    <h3>🧠 Метамодель</h3>
+
+    <!-- КНОПКИ -->
+    <div class="meta-tabs">
+        <button onclick="showMeta('gen')">Обобщения</button>
+        <button onclick="showMeta('del')">Опущения</button>
+        <button onclick="showMeta('dist')">Искажения</button>
+    </div>
+
+    <!-- ОБОБЩЕНИЯ -->
+    <div id="gen" class="meta-group">
+        <div class="meta-card" onclick="insertQuestion('Кто именно?')">
+            Обобщённый референтный индекс
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Всегда? Были ли исключения?')">
+            Универсальные кванторы
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Что случится если ты этого не сделаешь?')">
+            Должен / обязан
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('При каких условиях это возможно?')">
+            Не могу / невозможно
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Как именно это происходит?')">
+            Номинализация
+        </div>
+    </div>
+
+    <!-- ОПУЩЕНИЯ -->
+    <div id="del" class="meta-group" style="display:none;">
+        <div class="meta-card" onclick="insertQuestion('Кто именно?')">
+            Стёртый субъект
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Что конкретно ты делаешь?')">
+            Неконкретные глаголы
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('По каким критериям?')">
+            Прилагательные
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Какой именно?')">
+            Существительные
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('По сравнению с чем?')">
+            Сравнения
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Что именно? Когда? Где?')">
+            Неопределённости
+        </div>
+    </div>
+
+    <!-- ИСКАЖЕНИЯ -->
+    <div id="dist" class="meta-group" style="display:none;">
+        <div class="meta-card" onclick="insertQuestion('Как именно ты это делаешь?')">
+            Обратный индекс
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Всегда ли одно означает другое?')">
+            Комплексный эквивалент
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Что ты предполагаешь?')">
+            Пресуппозиции
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('С чего ты это взял?')">
+            Чтение мыслей
+        </div>
+
+        <div class="meta-card" onclick="insertQuestion('Как именно это вызывает это?')">
+            Причина-следствие
+        </div>
+    </div>
+
+</div>
+
+<script>
+function showMeta(group) {
+    document.getElementById("gen").style.display = "none";
+    document.getElementById("del").style.display = "none";
+    document.getElementById("dist").style.display = "none";
+
+    document.getElementById(group).style.display = "block";
+}
+</script>
