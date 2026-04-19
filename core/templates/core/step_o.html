@@ -5,7 +5,7 @@
 
 <form method="post">
     {% csrf_token %}
-    <input type="text" name="answer" style="width:300px;">
+    <textarea name="answer" placeholder="Введите ответ..."></textarea>
     <input type="hidden" name="step" value="{{ step }}">
     <button type="submit">Далее</button>
 </form>

@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background: #0f172a;
     color: white;
-    margin: 0;
+    margin: 20;
     padding: 0;
 }
 
@@ -12,6 +12,16 @@ body {
     padding: 30px;
     background: #1e293b;
     border-radius: 12px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;   /* высота */
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    resize: vertical;    /* можно растягивать вниз */
 }
 
 h1, h2 {

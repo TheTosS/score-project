@@ -52,6 +52,7 @@ def step_c(request):
         return render(request, "core/error.html")
 
     session = Session.objects.get(id=session_id)
+    answers = Answer.objects.filter(session=session, step="C").order_by("order")
 
     if request.method == "POST":
         depth = int(request.POST.get("depth", 0))
@@ -79,7 +80,9 @@ def step_c(request):
     if depth == 0:
         question = "В чем причина этой ситуации?"
     else:
-        question = f"Почему это? ({depth + 1}/5)"
+        prev_answer = answers.last().answer if answers.exists() else ""
+
+        question = f"Почему: \"{prev_answer}\"?"
 
     return render(request, "core/step_c.html", {
         "question": question,
