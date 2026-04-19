@@ -47,6 +47,55 @@ button {
     cursor: pointer;
 }
 
+.history {
+    margin-top: 40px;
+}
+
+.dialog-block {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #0f172a;
+}
+
+.question {
+    color: #38bdf8;
+    margin-bottom: 8px;
+}
+
+.answer {
+    color: #e2e8f0;
+}
+
 button:hover {
     background: #0ea5e9;
+}
+
+.dialog-block:last-child {
+    border: 1px solid #38bdf8;
+    background: #020617;
+}
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.msg {
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 70%;
+}
+
+.question-msg {
+    background: #1e293b;
+    align-self: flex-start;
+}
+
+.answer-msg {
+    background: #38bdf8;
+    color: black;
+    align-self: flex-end;
 }

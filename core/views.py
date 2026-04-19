@@ -58,6 +58,8 @@ def step_c(request):
         depth = int(request.POST.get("depth", 0))
         answer = request.POST.get("answer")
 
+
+
         # 🔥 СОХРАНЕНИЕ
         Answer.objects.create(
             session=session,
@@ -66,6 +68,8 @@ def step_c(request):
             answer=answer,
             order=depth
         )
+
+
 
         print(f"C уровень {depth}: {answer}")
         print("C SAVED")
@@ -82,11 +86,17 @@ def step_c(request):
     else:
         prev_answer = answers.last().answer if answers.exists() else ""
 
-        question = f"Почему: \"{prev_answer}\"?"
+        meta_q = meta_question(prev_answer)
+
+        if meta_q:
+            question = meta_q
+        else:
+            question = f"Почему: \"{prev_answer}\"?"
 
     return render(request, "core/step_c.html", {
         "question": question,
-        "depth": depth
+        "depth": depth,
+        "answers": answers
     })
 
 def step_o(request):
@@ -233,3 +243,29 @@ def report(request, session_id):
         "data": data,
         "session": session
     })
+
+def meta_question(answer):
+    answer = answer.lower()
+
+    if "всегда" in answer or "никогда" in answer:
+        return "Всегда? Можешь вспомнить исключение?"
+
+    if "все" in answer or "никто" in answer:
+        return "Кто конкретно?"
+
+    if "не могу" in answer:
+        return "Что тебе мешает?"
+
+    if "должен" in answer or "надо" in answer:
+        return "Что произойдет, если не будешь?"
+
+    if "проблема" in answer:
+        return "Что именно делает это проблемой?"
+
+    if "не получается" in answer:
+        return "Что конкретно не получается?"
+
+    if "боюсь" in answer:
+        return "Чего именно ты боишься?"
+
+    return None

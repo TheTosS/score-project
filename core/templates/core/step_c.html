@@ -9,3 +9,27 @@
     <input type="hidden" name="depth" value="{{ depth }}">
     <button type="submit">Далее</button>
 </form>
+
+<div class="history">
+
+    {% for a in answers %}
+        <div class="dialog">
+
+            <div class="question">
+                <b>Вопрос:</b><br>
+                {{ a.question }}
+            </div>
+
+            <div class="answer">
+                <b>Ответ:</b><br>
+                {{ a.answer }}
+            </div>
+
+        </div>
+    {% endfor %}
+
+</div>
+
+<script>
+    window.scrollTo(0, document.body.scrollHeight);
+</script>
