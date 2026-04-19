@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<h2>{{ question }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="answer" style="width:300px;">
+    <input type="hidden" name="step" value="{{ step }}">
+    <button type="submit">Далее</button>
+</form>
