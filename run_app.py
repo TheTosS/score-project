@@ -6,6 +6,9 @@ import sys
 
 from wsgiref.simple_server import make_server
 from django.core.wsgi import get_wsgi_application
+from django.core.wsgi import get_wsgi_application
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+from wsgiref.simple_server import make_server
 
 
 def start_django():
@@ -22,6 +25,9 @@ def start_django():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'score_project.settings')
 
     application = get_wsgi_application()
+
+    # 💣 ОБЕРТКА ДЛЯ STATIC
+    application = StaticFilesHandler(application)
 
     server = make_server('127.0.0.1', 8000, application)
     server.serve_forever()
