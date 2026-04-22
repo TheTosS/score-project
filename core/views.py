@@ -86,17 +86,20 @@ def step_c(request):
     else:
         prev_answer = answers.last().answer if answers.exists() else ""
 
-        meta_q = meta_question(prev_answer)
+        meta_data = meta_question(prev_answer)
 
-        if meta_q:
-            question = meta_q
+        if meta_data:
+            question = meta_data["question"]
+            meta_type = meta_data["type"]
         else:
             question = f"Почему: \"{prev_answer}\"?"
+            meta_type = None
 
     return render(request, "core/step_c.html", {
         "question": question,
         "depth": depth,
-        "answers": answers
+        "answers": answers,
+        "meta_type": meta_type
     })
 
 def step_o(request):
@@ -248,24 +251,45 @@ def meta_question(answer):
     answer = answer.lower()
 
     if "всегда" in answer or "никогда" in answer:
-        return "Всегда? Можешь вспомнить исключение?"
+        return {
+            "question": "Всегда? Можешь вспомнить исключение?",
+            "type": "gen"
+        }
 
     if "все" in answer or "никто" in answer:
-        return "Кто конкретно?"
+        return {
+            "question": "Кто конкретно?",
+            "type": "gen"
+        }
 
     if "не могу" in answer:
-        return "Что тебе мешает?"
+        return {
+            "question": "Что тебе мешает?",
+            "type": "gen"
+        }
 
     if "должен" in answer or "надо" in answer:
-        return "Что произойдет, если не будешь?"
+        return {
+            "question": "Что произойдет, если не будешь?",
+            "type": "gen"
+        }
 
     if "проблема" in answer:
-        return "Что именно делает это проблемой?"
+        return {
+            "question": "Что именно делает это проблемой?",
+            "type": "del"
+        }
 
     if "не получается" in answer:
-        return "Что конкретно не получается?"
+        return {
+            "question": "Что конкретно не получается?",
+            "type": "del"
+        }
 
     if "боюсь" in answer:
-        return "Чего именно ты боишься?"
+        return {
+            "question": "Чего именно ты боишься?",
+            "type": "dist"
+        }
 
     return None
